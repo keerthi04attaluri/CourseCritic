@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="login.jpg" alt="Login Image">
+        </div>
+        <div class="right-side">
+            <div class="login-box">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1>Login</h1>
+                <form id="login-form" onsubmit="handleLogin(event)" action = "login.php">
+                    <input type="text" id="identifier" placeholder="Email or Registration Number" required>
+                    <input type="password" id="password" placeholder="Password" required>
+                    <button type="submit"><a href = "src.html">Login</button>
+                </form>
+                <div id="error-message" class="error-message"></div>
+                <p>Don't have an account? <a href="signup.html">Register here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const identifier = document.getElementById('identifier').value;
+            const password = document.getElementById('password').value;
+
+            fetch('login.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ identifier, password }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = 'index.html';
+                    } else {
+                        document.getElementById('error-message').innerText = data.message;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+
+</html>

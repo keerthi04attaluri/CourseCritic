@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('https://garden.spoonflower.com/c/6517853/p/f/m/22MqE-03X_TxEJ8Gs1s_q2qCUmhCEGyYCJ1GeBZS5xiol-tfUd8/Cucumber%2C%20Solid%20Colour.jpg'); 
+
+}
+
+header {
+    background-color: #4B6075;
+    color: white;
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.navbar-brand h1 {
+    margin: 0;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu li {
+    margin: 0 10px;
+}
+
+.navbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline;
+}
+
+.search-bar, .filter, .review-form, .comparison-tools {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+}
+
+.filter select {
+    padding: 10px;
+    font-size: 16px;
+    width: 48%;
+}
+
+.course-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.course-detail {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    background-color: #f9f9f9;
+}
+
+.review-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.review-form input, .review-form select, .review-form textarea, .review-form button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.review-form textarea {
+    resize: vertical;
+}
+
+.comparison-tools {
+    text-align: center;
+}
+
+.comparison-inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.comparison-inputs input {
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.comparison-inputs button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+#comparisonChart {
+    max-width: 800px;
+    margin: 0 auto;
+}

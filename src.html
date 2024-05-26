@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CourseCritic</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <h1>CourseCritic</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#search-section">Search</a></li>
+                <li><a href="#review-section">Submit Review</a></li>
+                <li><a href="#course-list">Courses</a></li>
+                <li><a href="#comparison-section">Compare</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="search-section" class="search-bar">
+        <input type="text" id="search-input" placeholder="Search for courses.." onkeyup="filterCourses()">
+    </section>
+    <section class="filter">
+        <select id="department-filter" onchange="filterCourses()">
+            <option value="">All Departments</option>
+            <option value="CS">Computer Science</option>
+            <option value="Math">Mathematics</option>
+            <option value="management">Management</option>
+        </select>
+        <select id="rating-filter" onchange="filterCourses()">
+            <option value="">All Ratings</option>
+            <option value="5">5 Stars</option>
+            <option value="4">4 Stars</option>
+            <option value="3">3 Stars</option>
+            <option value="2">2 Stars</option>
+            <option value="1">1 Star</option>
+        </select>
+    </section>
+    <section id="course-list" class="course-list">
+    </section>
+    <section id="review-section" class="review-form">
+        <h2>Submit a Review</h2>
+        <form id="review-form" onsubmit="submitReview(event)">
+            <input type="text" id="course-name" placeholder="Course Name" required>
+            <input type="text" id="professor-name" placeholder="Professor Name" required>
+            <select id="course-rating" required>
+                <option value="">Overall Rating</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+            <select id="workload-rating" required>
+                <option value="">Workload Rating</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+            <select id="difficulty-rating" required>
+                <option value="">Difficulty Rating</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="2">2 Stars</option>
+                <option value="1">1 Star</option>
+            </select>
+            <textarea id="review-text" placeholder="Write your review..." required></textarea>
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+    <section id="comparison-section" class="comparison-tools">
+        <h2>Compare Courses</h2>
+        <div class="comparison-inputs">
+            <input type="text" id="compare-course1" placeholder="Course Name 1">
+            <input type="text" id="compare-course2" placeholder="Course Name 2">
+            <button onclick="compareCourses()">Compare</button>
+        </div>
+        <canvas id="comparisonChart"></canvas>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
